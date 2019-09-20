@@ -2,6 +2,8 @@
   "extends": ["react-app", "airbnb-typescript"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/prop-types": "off",
+    "linebreak-style": ["error", "windows"]
   }
 }

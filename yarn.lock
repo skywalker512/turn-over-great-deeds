@@ -9333,7 +9333,7 @@ style-loader@1.0.0:
     loader-utils "^1.2.3"
     schema-utils "^2.0.1"
 
-styled-components@^4.3.2:
+styled-components@^4.1.3, styled-components@^4.3.2:
   version "4.3.2"
   resolved "https://registry.npm.taobao.org/styled-components/download/styled-components-4.3.2.tgz?cache=0&sync_timestamp=1566498971071&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstyled-components%2Fdownload%2Fstyled-components-4.3.2.tgz#4ca81918c812d3006f60ac5fdec7d6b64a9509cc"
   integrity sha1-TKgZGMgS0wBvYKxf3sfWtkqVCcw=
@@ -9356,6 +9356,13 @@ styled-normalize@^8.0.6:
   version "8.0.6"
   resolved "https://registry.npm.taobao.org/styled-normalize/download/styled-normalize-8.0.6.tgz#f27f87292f46aa79ad6db6339aff5db529df3c91"
   integrity sha1-8n+HKS9GqnmtbbYzmv9dtSnfPJE=
+
+styled-px2vw@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.npm.taobao.org/styled-px2vw/download/styled-px2vw-1.0.9.tgz#db036d293943ddbddbff9593400588067d694633"
+  integrity sha1-2wNtKTlD3b3b/5WTQAWIBn1pRjM=
+  dependencies:
+    styled-components "^4.1.3"
 
 stylehacks@^4.0.0:
   version "4.0.3"

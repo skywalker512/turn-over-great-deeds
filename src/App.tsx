@@ -1,12 +1,16 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import IndexPage from './pages/index';
-import HomePage from './pages/home';
+import { Route, Switch } from 'react-router-dom';
+import IndexPage from './pages/Index';
+import ChoosePage from './pages/Choose';
+import RankListPage from './pages/RankList';
+import SectionPage from './pages/Section';
 
 const App: React.FC = () => (
   <Switch>
     <Route exact path="/" component={IndexPage} />
-    <Route path="/home/:id" component={HomePage} />
+    <Route exact path="/choose" component={ChoosePage} />
+    <Route exact path="/rankList" component={RankListPage} />
+    <Route exact path="/section/:step" component={SectionPage} />
   </Switch>
 );
 

@@ -4,10 +4,12 @@ import { HashRouter } from 'react-router-dom';
 import { Normalize } from 'styled-normalize';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { GlobalStyle } from './styled';
 
 ReactDOM.render(
   <HashRouter>
     <Normalize />
+    <GlobalStyle />
     <App />
   </HashRouter>,
   document.getElementById('root'),

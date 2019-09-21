@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const ChoosePage: React.FC<RouteComponentProps> = () => (
+const ChoosePage: React.FC = () => (
   <>
     <Link to="/section/1">第1关</Link>
     <Link to="/section/2">第2关</Link>

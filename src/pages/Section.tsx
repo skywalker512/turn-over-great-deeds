@@ -1,10 +1,11 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import useRouter from 'use-react-router';
 import SectionHeader from '../component/SectionHeader';
 
-const SectionPage: React.FC<RouteComponentProps<{ step: string }>> = ({
-  match: { params },
-}) => {
+const SectionPage: React.FC = () => {
+  const {
+    match: { params },
+  } = useRouter<{ step: string }>();
   const { step } = params;
   const stepNum = parseInt(step, 10);
   return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import SectionHeader from '../component/SectionHeader';
 
 const SectionPage: React.FC<RouteComponentProps<{ step: string }>> = ({
   match: { params },
@@ -7,10 +8,13 @@ const SectionPage: React.FC<RouteComponentProps<{ step: string }>> = ({
   const { step } = params;
   const stepNum = parseInt(step, 10);
   return (
-    <div>
-      每一个关卡:
-      {stepNum}
-    </div>
+    <>
+      <SectionHeader />
+      <div>
+        每一个关卡:
+        {stepNum}
+      </div>
+    </>
   );
 };
 

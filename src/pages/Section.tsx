@@ -6,6 +6,7 @@ import SectionCard from '../component/SectionCard';
 
 const Wrapper = styled.div`
   position: absolute;
+  z-index: -1;
   ${PositionAll};
   background-color: ${Theme.color.backgroundColor};
 `;

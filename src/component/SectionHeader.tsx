@@ -4,7 +4,7 @@ import useRouter from 'use-react-router';
 import BaseBack from './BaseBack';
 import convertNumberToUppercase from '../utils/convertNumberToUppercase';
 import SectionTime from './SectionTime';
-import { ISectionProp } from '../interface/ISectionProp';
+import { ISectionRouterProp } from '../interface/ISectionRouterProp';
 
 const Header = styled.header`
   position: relative;
@@ -21,7 +21,7 @@ const Text = styled.div`
 const SectionHeader: React.FC = () => {
   const {
     match: { params },
-  } = useRouter<ISectionProp>();
+  } = useRouter<ISectionRouterProp>();
   const { step } = params;
   const [stepNum] = useState(convertNumberToUppercase(step));
 

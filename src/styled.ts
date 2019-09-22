@@ -4,6 +4,8 @@ import font from './assets/font/font.css';
 export const Theme = {
   color: {
     backgroundColor: '#ffe2ae',
+    mainFontColor: '#b1252d',
+    secondFontColor: '#d16a58',
   },
 };
 export const PositionAll = {
@@ -22,5 +24,6 @@ export const GlobalStyle = createGlobalStyle`
      position: absolute;
      ${PositionAll};
      overflow: hidden;
+     color: ${Theme.color.mainFontColor};
   }
 `;

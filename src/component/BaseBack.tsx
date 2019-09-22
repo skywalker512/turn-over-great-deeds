@@ -11,6 +11,11 @@ const Icon = styled.div`
   left: 0;
   top: 0;
 `;
-const BaseBack: React.FC = () => <Icon />;
+const BaseBack: React.FC = () => {
+  const handelClick = () => {
+    window.history.go(-1);
+  };
+  return <Icon onClick={handelClick} />;
+};
 
 export default BaseBack;

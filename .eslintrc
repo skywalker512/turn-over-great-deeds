@@ -5,6 +5,7 @@
     "prettier/prettier": "error",
     "react/prop-types": "off",
     "linebreak-style": ["error", "windows"],
-    "react/jsx-one-expression-per-line": "off"
+    "react/jsx-one-expression-per-line": "off",
+    "react/no-array-index-key": "off"
   }
 }

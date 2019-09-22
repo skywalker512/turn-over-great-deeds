@@ -1,22 +1,20 @@
 import React from 'react';
-import useRouter from 'use-react-router';
+import styled from 'styled-px2vw';
 import SectionHeader from '../component/SectionHeader';
+import { Theme, PositionAll } from '../styled';
+import SectionCard from '../component/SectionCard';
 
-const SectionPage: React.FC = () => {
-  const {
-    match: { params },
-  } = useRouter<{ step: string }>();
-  const { step } = params;
-  const stepNum = parseInt(step, 10);
-  return (
-    <>
-      <SectionHeader />
-      <div>
-        每一个关卡:
-        {stepNum}
-      </div>
-    </>
-  );
-};
+const Wrapper = styled.div`
+  position: absolute;
+  ${PositionAll};
+  background-color: ${Theme.color.backgroundColor};
+`;
+
+const SectionPage: React.FC = () => (
+  <Wrapper>
+    <SectionHeader />
+    <SectionCard />
+  </Wrapper>
+);
 
 export default SectionPage;

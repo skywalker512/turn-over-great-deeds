@@ -24,13 +24,12 @@ const SectionHeader: React.FC = () => {
   } = useRouter<ISectionRouterProp>();
   const { step } = params;
   const [stepNum] = useState(convertNumberToUppercase(step));
-
   return (
     <>
       <Header>
         <BaseBack />
         <Text>第{stepNum}关</Text>
-        <SectionTime isRunning />
+        <SectionTime />
       </Header>
     </>
   );

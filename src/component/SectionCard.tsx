@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { CSSProperties, useState } from 'react';
 import useRouter from 'use-react-router';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-px2vw';
@@ -42,6 +42,8 @@ const CardFrontContent = styled(CardContent)`
   }
   span {
     margin-top: 16px;
+    white-space: nowrap;
+    transform-origin: top;
   }
 `;
 const CardWrapper = styled(animated.div)`
@@ -68,6 +70,25 @@ const Card: React.FC<ICardProps> = ({
     config: { mass: 5, tension: 500, friction: 80 },
   });
   const props = useSpring({ opacity: !isHide ? 1 : 0, delay: 500 });
+  // 浏览器限制 12px 下面的中文字不能用，所以使用 scale 配合
+  // white-space: nowrap;
+  // transform-origin: top;
+  // 达到更小字体
+  // 但是他又没有改变元素的大小但是 zoom 又正好改变了元素的大小又不会小于 12px
+  let fontSizes: CSSProperties;
+  if (parseFloat(fontSize) < 3) {
+    const transforms = `scale(${parseFloat(fontSize) / 3.2})`;
+    fontSizes = {
+      zoom: `${parseFloat(fontSize) / 3.2}`,
+      transform: transforms,
+      WebkitTransform: transforms,
+      fontSize: '12px',
+    };
+  } else {
+    fontSizes = {
+      fontSize,
+    };
+  }
   return (
     <CardWrapper
       style={{
@@ -102,7 +123,7 @@ const Card: React.FC<ICardProps> = ({
             width: imageWidth,
           }}
         />
-        <span style={{ fontSize }}>{content}</span>
+        <span style={fontSizes}>{content}</span>
       </CardFrontContent>
     </CardWrapper>
   );
@@ -137,6 +158,7 @@ const SectionCard: React.FC = () => {
   );
   const [cardSize] = useState(cardsSize[stepNum - 1]);
   const handelCardClick = (index: number) => {
+    if (cardData[index].isHide) return; // 如果隐藏了就不执行了
     // 先查询上一次的 -> 是否已经有两张已经翻开了
     const temp = cardData.filter(item => item.isShow && !item.isHide);
     // 如果有两张已经翻开 只能将已经翻开的返回去 而不能新翻开牌

@@ -8,6 +8,7 @@ import sortCard from '../utils/sortCard';
 import CardBackPng from '../assets/image/CardBack.png';
 import CardFrontPng from '../assets/image/CardFront.png';
 import BaseMask from './BaseMask';
+import SectionMask from './SectionMask';
 
 interface ICardProps {
   img: string;
@@ -211,7 +212,13 @@ const SectionCard: React.FC = () => {
           />
         ))}
       </SectionCardWrapper>
-      {showMask ? <BaseMask>2</BaseMask> : ''}
+      {!showMask ? (
+        <BaseMask>
+          <SectionMask />
+        </BaseMask>
+      ) : (
+        ''
+      )}
     </>
   );
 };

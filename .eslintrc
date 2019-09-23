@@ -6,6 +6,7 @@
     "react/prop-types": "off",
     "linebreak-style": ["error", "windows"],
     "react/jsx-one-expression-per-line": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "operator-linebreak": "off"
   }
 }

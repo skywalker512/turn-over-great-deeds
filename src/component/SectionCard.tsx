@@ -7,6 +7,7 @@ import cardDatas, { cardsSize } from '../data/card';
 import sortCard from '../utils/sortCard';
 import CardBackPng from '../assets/image/CardBack.png';
 import CardFrontPng from '../assets/image/CardFront.png';
+import BaseMask from './BaseMask';
 
 interface ICardProps {
   img: string;
@@ -157,6 +158,7 @@ const SectionCard: React.FC = () => {
     })),
   );
   const [cardSize] = useState(cardsSize[stepNum - 1]);
+  const [showMask, setShowMask] = useState(false);
   const handelCardClick = (index: number) => {
     if (cardData[index].isHide) return; // 如果隐藏了就不执行了
     // 先查询上一次的 -> 是否已经有两张已经翻开了
@@ -177,30 +179,40 @@ const SectionCard: React.FC = () => {
           cardData[isShowCard[1].id].isHide = true;
           // 设定新的 state
           setCardData([...cardData]);
+          // 在这种情况下查看是否还有牌没有隐藏
+          // 如果没有那么就触发时间暂停
+          if (!cardData.some(item => !item.isHide)) {
+            const cardFinished = new Event('cardFinished');
+            window.dispatchEvent(cardFinished);
+            setShowMask(true);
+          }
         }
       }
     }
   };
   return (
-    <SectionCardWrapper>
-      {cardData.map((item, index) => (
-        <Card
-          height={cardSize.height}
-          width={cardSize.width}
-          marginRight={cardSize.marginRight}
-          marginBottom={cardSize.marginBottom}
-          imageHeight={cardSize.imageHeight}
-          imageWidth={cardSize.imageWidth}
-          fontSize={cardSize.fontSize}
-          img={item.img}
-          content={item.content}
-          isShow={item.isShow}
-          isHide={item.isHide}
-          onClick={() => handelCardClick(index)}
-          key={item.id}
-        />
-      ))}
-    </SectionCardWrapper>
+    <>
+      <SectionCardWrapper>
+        {cardData.map((item, index) => (
+          <Card
+            height={cardSize.height}
+            width={cardSize.width}
+            marginRight={cardSize.marginRight}
+            marginBottom={cardSize.marginBottom}
+            imageHeight={cardSize.imageHeight}
+            imageWidth={cardSize.imageWidth}
+            fontSize={cardSize.fontSize}
+            img={item.img}
+            content={item.content}
+            isShow={item.isShow}
+            isHide={item.isHide}
+            onClick={() => handelCardClick(index)}
+            key={item.id}
+          />
+        ))}
+      </SectionCardWrapper>
+      {showMask ? <BaseMask>2</BaseMask> : ''}
+    </>
   );
 };
 export default SectionCard;

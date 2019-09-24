@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   background-color: ${Theme.color.backgroundColor};
 `;
 
-const Back = styled.div`
+export const Back = styled.div`
   position: absolute;
   top: 40px;
   left: 42px;

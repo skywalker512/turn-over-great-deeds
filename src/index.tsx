@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// @ts-ignore
+import initReactFastclick from 'react-fastclick';
 import { HashRouter } from 'react-router-dom';
 import { Normalize } from 'styled-normalize';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { GlobalStyle } from './styled';
-import 'react-id-swiper/lib/styles/css/swiper.css';
+
+initReactFastclick();
 
 ReactDOM.render(
   <HashRouter>

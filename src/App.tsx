@@ -8,6 +8,7 @@ import ChoosePage from './pages/Choose';
 import RankListPage from './pages/RankList';
 import SectionPage from './pages/Section';
 import { PositionAll } from './styled';
+import SuccessPage from './pages/Success';
 
 const Container = styled(animated.div)`
   position: absolute;
@@ -35,6 +36,7 @@ const App: React.FC = () => (
     <Route exact path="/choose" component={ChoosePage} />
     <Route exact path="/rankList" component={RankListPage} />
     <Route exact path="/section/:step" component={SectionPage} />
+    <Route exact path="/success" component={SuccessPage} />
   </AnimatedRoute>
 );
 

@@ -119,8 +119,7 @@ const SectionMask: React.FC = () => {
     count > 0 ? 1000 : null,
   );
   const time: number[] = JSON.parse(
-    window.localStorage.getItem('time') ||
-      JSON.stringify(Array(5).map(() => -1)),
+    window.localStorage.getItem('time') || JSON.stringify(Array(5).fill(-1)),
   );
   const Animation = useTrail(3, {
     transform: 'translate3d(0,0%,0)',
@@ -151,11 +150,15 @@ const SectionMask: React.FC = () => {
             <Link to="/">
               <BaseOrangeButton>返回首页</BaseOrangeButton>
             </Link>
-            {count > 0 ? (
-              <BaseRedButton>{count}s</BaseRedButton>
-            ) : (
+            {count > 0 && <BaseRedButton>{count}s</BaseRedButton>}
+            {count < 1 && stepNum !== 5 && (
               <Link to={`/section/${stepNum + 1}`}>
                 <BaseRedButton>下一关</BaseRedButton>
+              </Link>
+            )}
+            {count < 1 && stepNum === 5 && (
+              <Link to="/success">
+                <BaseOrangeButton>挑战成功</BaseOrangeButton>
               </Link>
             )}
           </Control>

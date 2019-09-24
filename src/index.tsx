@@ -5,6 +5,7 @@ import { Normalize } from 'styled-normalize';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { GlobalStyle } from './styled';
+import 'react-id-swiper/lib/styles/css/swiper.css';
 
 ReactDOM.render(
   <HashRouter>

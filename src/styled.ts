@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   // 引入字体
   ${font}
 
+  a { text-decoration: none; }
   html, body {
      position: absolute;
      ${PositionAll};

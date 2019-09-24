@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useRouter from 'use-react-router';
 import styled from 'styled-px2vw';
+import { Link } from 'react-router-dom';
 import { ISectionRouterProp } from '../interface/ISectionRouterProp';
 import PassTilePng from '../assets/image/SectionPassTitle.png';
 import SectionPassContentPng from '../assets/image/SectionPassContent.png';
 import SectionPassTimePng from '../assets/image/SectionPassTime.png';
 import SectionPassRecordPng from '../assets/image/SectionPassRecord.png';
+import BaseTopPng from '../assets/image/BaseTop.png';
+import SectionSwiper from './SectionSwiper';
+import { BaseOrangeButton, BaseRedButton } from './BaseButton';
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,6 +29,24 @@ const Content = styled.div`
   background-size: cover;
   width: 660px;
   height: 793px;
+  position: relative;
+  & > div {
+    padding: 134px 48px 0 50px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("${BaseTopPng}");
+    background-size: cover;
+    margin-top: 10px;
+    height: 171px;
+    width: 660px;
+    z-index: 2;
+  }
 `;
 
 const Info = styled.div`
@@ -60,6 +82,13 @@ const RecordIcon = styled.div`
   height: 69px;
 `;
 
+const Control = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 366px;
+  margin: 36px auto 0 auto;
+`;
+
 const Time: React.FC<{ time: number }> = ({ time }) => (
   <InfoContent>
     <TimeIcon />
@@ -75,6 +104,11 @@ const Record: React.FC = () => (
 );
 
 const SectionMask: React.FC = () => {
+  const {
+    match: { params },
+  } = useRouter<ISectionRouterProp>();
+  const { step } = params;
+  const [stepNum] = useState(Number(step));
   const time: number[] = JSON.parse(
     window.localStorage.getItem('time') ||
       JSON.stringify(Array(5).map(() => -1)),
@@ -83,9 +117,6 @@ const SectionMask: React.FC = () => {
     time: 10,
     isRecord: true,
   };
-  const handelGoHomeClick = () => {
-    window.history.go(-1);
-  };
   return (
     <Wrapper>
       <Title />
@@ -93,7 +124,19 @@ const SectionMask: React.FC = () => {
         <Time time={result.time} />
         {result.isRecord ? <Record /> : ''}
       </Info>
-      <Content />
+      <Content>
+        <div>
+          <SectionSwiper />
+          <Control>
+            <Link to="/">
+              <BaseOrangeButton>返回首页</BaseOrangeButton>
+            </Link>
+            <Link to={`/section/${stepNum + 1}`}>
+              <BaseRedButton>10s</BaseRedButton>
+            </Link>
+          </Control>
+        </div>
+      </Content>
     </Wrapper>
   );
 };

@@ -66,7 +66,7 @@ const SectionSwiper: React.FC = () => {
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Swiper {...config}>
         {cardData.map(item => (
-          <div>
+          <div key={item.content}>
             <Image
               style={{
                 backgroundImage: `url(${item.img})`,

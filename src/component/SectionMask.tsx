@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useRouter from 'use-react-router';
 import styled from 'styled-px2vw';
 import { Link } from 'react-router-dom';
+import { useTrail, animated } from 'react-spring';
 import { ISectionRouterProp } from '../interface/ISectionRouterProp';
 import PassTilePng from '../assets/image/SectionPassTitle.png';
 import SectionPassContentPng from '../assets/image/SectionPassContent.png';
@@ -17,14 +18,14 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Title = styled.div`
+const Title = styled(animated.div)`
   background-image: url(${PassTilePng});
   background-size: cover;
   width: 750px;
   height: 134px;
 `;
 
-const Content = styled.div`
+const Content = styled(animated.div)`
   background-image: url(${SectionPassContentPng});
   background-size: cover;
   width: 660px;
@@ -49,7 +50,7 @@ const Content = styled.div`
   }
 `;
 
-const Info = styled.div`
+const Info = styled(animated.div)`
   display: flex;
   font-size: 34px;
   color: #fef5d3;
@@ -113,18 +114,29 @@ const SectionMask: React.FC = () => {
     window.localStorage.getItem('time') ||
       JSON.stringify(Array(5).map(() => -1)),
   );
+  const Animation = useTrail(3, {
+    transform: 'translate3d(0,0%,0)',
+    opacity: 1,
+    from: { transform: 'translate3d(0,100%,0)', opacity: 0 },
+    delay: 500,
+    config: {
+      mass: 10,
+      tension: 500,
+      friction: 80,
+    },
+  });
   const result = {
     time: 10,
     isRecord: true,
   };
   return (
     <Wrapper>
-      <Title />
-      <Info>
+      <Title style={Animation[1]} />
+      <Info style={Animation[2]}>
         <Time time={result.time} />
         {result.isRecord ? <Record /> : ''}
       </Info>
-      <Content>
+      <Content style={Animation[0]}>
         <div>
           <SectionSwiper />
           <Control>

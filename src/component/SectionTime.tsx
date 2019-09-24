@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-px2vw';
+import useRouter from 'use-react-router';
 import useInterval from '../utils/useInterval';
 import BaseTimePng from '../assets/image/BaseTime.png';
 import { Theme } from '../styled';
-import useRouter from 'use-react-router';
 import { ISectionRouterProp } from '../interface/ISectionRouterProp';
 
 export interface IProps {

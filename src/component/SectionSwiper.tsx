@@ -60,12 +60,6 @@ const SectionSwiper: React.FC = () => {
       el: '.swiper-pagination',
       clickable: true,
     },
-    on: {
-      slideChange() {
-        // @ts-ignore
-        // eslint-disable-next-line react/no-this-in-sfc
-      },
-    },
   };
   return (
     <Wrapper>
@@ -76,7 +70,6 @@ const SectionSwiper: React.FC = () => {
             <Image
               style={{
                 backgroundImage: `url(${item.img})`,
-                // margin: cardData.length - 1 === index ? '0 0 0 auto' : '',
               }}
             />
             <Content>

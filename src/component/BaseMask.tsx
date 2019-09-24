@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-px2vw';
+import { useSpring, animated } from 'react-spring';
 
-const Wrapper = styled.div`
+const Wrapper = styled(animated.div)`
   position: absolute;
   z-index: 100;
   top: 0;
@@ -14,6 +15,9 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const BaseMask: React.FC = ({ children }) => <Wrapper>{children}</Wrapper>;
+const BaseMask: React.FC = ({ children }) => {
+  const props = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 600 });
+  return <Wrapper style={props}>{children}</Wrapper>;
+};
 
 export default BaseMask;

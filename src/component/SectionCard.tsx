@@ -212,7 +212,7 @@ const SectionCard: React.FC = () => {
           />
         ))}
       </SectionCardWrapper>
-      {!showMask ? (
+      {showMask ? (
         <BaseMask>
           <SectionMask />
         </BaseMask>

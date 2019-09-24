@@ -5,7 +5,7 @@ import BaseRedButtonPng from '../assets/image/BaseRedButton.png';
 const Button = styled.div`
   background-size: cover;
   height: 62px;
-  width: 163px;
+  width: 164px;
   color: #f3efbf;
   font-size: 30px;
   line-height: 62px;

@@ -42,7 +42,7 @@ const Content = styled.div`
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    height: 53px;
+    height: 48px;
   }
 `;
 

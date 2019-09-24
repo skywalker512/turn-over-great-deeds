@@ -212,12 +212,10 @@ const SectionCard: React.FC = () => {
           />
         ))}
       </SectionCardWrapper>
-      {showMask ? (
-        <BaseMask>
+      {showMask && (
+        <BaseMask delay={600}>
           <SectionMask />
         </BaseMask>
-      ) : (
-        ''
       )}
     </>
   );

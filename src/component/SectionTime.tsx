@@ -42,6 +42,12 @@ const SectionTime: React.FC = () => {
   const { step } = params;
   const stepNum = Number(step);
   // 是否持续计时
+  window.addEventListener('cardSuspend', () => {
+    setRuning(false);
+  });
+  window.addEventListener('cardContinue', () => {
+    setRuning(true);
+  });
   window.addEventListener('cardFinished', () => {
     setRuning(false);
     const time: number[] = JSON.parse(

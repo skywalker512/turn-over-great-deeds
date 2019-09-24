@@ -11,11 +11,13 @@ const Icon = styled.div`
   left: 0;
   top: 0;
 `;
-const BaseBack: React.FC = () => {
+const BaseBack: React.FC<{ callback?: () => any }> = ({ callback }) => {
   const handelClick = () => {
+    const BackEvent = new Event('cback');
     window.history.go(-1);
+    window.dispatchEvent(BackEvent);
   };
-  return <Icon onClick={handelClick} />;
+  return <Icon onClick={callback || handelClick} />;
 };
 
 export default BaseBack;

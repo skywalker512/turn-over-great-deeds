@@ -5,6 +5,8 @@ import BaseBack from './BaseBack';
 import convertNumberToUppercase from '../utils/convertNumberToUppercase';
 import SectionTime from './SectionTime';
 import { ISectionRouterProp } from '../interface/ISectionRouterProp';
+import BaseMask from './BaseMask';
+import BaseConfirmBack from './BaseConfirmBack';
 
 const Header = styled.header`
   position: relative;
@@ -21,16 +23,37 @@ const Text = styled.div`
 const SectionHeader: React.FC = () => {
   const {
     match: { params },
+    history,
   } = useRouter<ISectionRouterProp>();
   const { step } = params;
   const [stepNum] = useState(convertNumberToUppercase(step));
+  const [showConfirm, setShowConfirm] = useState(false);
+  const handelBackClick = () => {
+    setShowConfirm(true);
+    window.dispatchEvent(new Event('cardSuspend'));
+  };
+  const handelConfirmClick = () => {
+    history.go(-1);
+  };
+  const handelCancelClick = () => {
+    setShowConfirm(false);
+    window.dispatchEvent(new Event('cardContinue'));
+  };
   return (
     <>
       <Header>
-        <BaseBack />
+        <BaseBack callback={handelBackClick} />
         <Text>第{stepNum}关</Text>
         <SectionTime />
       </Header>
+      {showConfirm && (
+        <BaseMask>
+          <BaseConfirmBack
+            cancel={handelCancelClick}
+            confirm={handelConfirmClick}
+          />
+        </BaseMask>
+      )}
     </>
   );
 };

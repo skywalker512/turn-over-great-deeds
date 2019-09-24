@@ -15,8 +15,8 @@ const Wrapper = styled(animated.div)`
   align-items: center;
 `;
 
-const BaseMask: React.FC = ({ children }) => {
-  const props = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 600 });
+const BaseMask: React.FC<{ delay?: number }> = ({ children, delay = 0 }) => {
+  const props = useSpring({ opacity: 1, from: { opacity: 0 }, delay });
   return <Wrapper style={props}>{children}</Wrapper>;
 };
 

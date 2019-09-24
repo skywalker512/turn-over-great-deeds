@@ -7,6 +7,7 @@ function useTimeout(callback: () => any, delay: number | null) {
     savedCallback.current = callback;
   }, [callback]);
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     function tick() {
       savedCallback.current();
@@ -15,7 +16,6 @@ function useTimeout(callback: () => any, delay: number | null) {
       const id = setTimeout(tick, delay);
       return () => clearTimeout(id);
     }
-    return () => {};
   }, [delay]);
 }
 

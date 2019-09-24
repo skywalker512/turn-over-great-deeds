@@ -11,6 +11,7 @@ import SectionPassRecordPng from '../assets/image/SectionPassRecord.png';
 import BaseTopPng from '../assets/image/BaseTop.png';
 import SectionSwiper from './SectionSwiper';
 import { BaseOrangeButton, BaseRedButton } from './BaseButton';
+import useInterval from '../utils/useInterval';
 
 const Wrapper = styled.div`
   display: flex;
@@ -110,6 +111,13 @@ const SectionMask: React.FC = () => {
   } = useRouter<ISectionRouterProp>();
   const { step } = params;
   const [stepNum] = useState(Number(step));
+  const [count, setCount] = useState(10);
+  useInterval(
+    () => {
+      setCount(count - 1);
+    },
+    count > 0 ? 1000 : null,
+  );
   const time: number[] = JSON.parse(
     window.localStorage.getItem('time') ||
       JSON.stringify(Array(5).map(() => -1)),
@@ -143,9 +151,13 @@ const SectionMask: React.FC = () => {
             <Link to="/">
               <BaseOrangeButton>返回首页</BaseOrangeButton>
             </Link>
-            <Link to={`/section/${stepNum + 1}`}>
-              <BaseRedButton>10s</BaseRedButton>
-            </Link>
+            {count > 0 ? (
+              <BaseRedButton>{count}s</BaseRedButton>
+            ) : (
+              <Link to={`/section/${stepNum + 1}`}>
+                <BaseRedButton>下一关</BaseRedButton>
+              </Link>
+            )}
           </Control>
         </div>
       </Content>

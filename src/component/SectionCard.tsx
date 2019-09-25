@@ -1,4 +1,4 @@
-import React, { CSSProperties, useState } from 'react';
+import React, { CSSProperties, useRef, useState } from 'react';
 import useRouter from 'use-react-router';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-px2vw';
@@ -162,6 +162,7 @@ const SectionCard: React.FC = () => {
   );
   const [cardSize] = useState(cardsSize[stepNum - 1]);
   const [showMask, setShowMask] = useState(false);
+  const setTimeoutRef = useRef<number>();
   const handelCardClick = (index: number) => {
     if (cardData[index].isHide) return; // 如果隐藏了就不执行了
     // 先查询上一次的 -> 是否已经有两张已经翻开了
@@ -189,6 +190,14 @@ const SectionCard: React.FC = () => {
             window.dispatchEvent(cardFinished);
             setShowMask(true);
           }
+        } else {
+          // 设定新的 state
+          clearTimeout(setTimeoutRef.current);
+          setTimeoutRef.current = setTimeout(() => {
+            cardData[isShowCard[0].id].isShow = false;
+            cardData[isShowCard[1].id].isShow = false;
+            setCardData([...cardData]);
+          }, 500);
         }
       }
     }

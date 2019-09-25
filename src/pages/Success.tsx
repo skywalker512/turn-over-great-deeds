@@ -14,6 +14,10 @@ const Wrapper = styled.div`
   right: 0;
   bottom: 0;
   background-color: ${Theme.color.backgroundColor};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const Title = styled(animated.div)`
@@ -21,7 +25,6 @@ const Title = styled(animated.div)`
   background-image: url("${SuccessTitlePng}");
   height: 134px;
   width: 600px;
-  margin: 120px auto 20px auto;
 `;
 
 const Card = styled(animated.div)`

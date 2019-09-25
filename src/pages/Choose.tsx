@@ -15,6 +15,10 @@ const Wrapper = styled.div`
   right: 0;
   bottom: 0;
   background-color: ${Theme.color.backgroundColor};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 export const Back = styled.div`
@@ -28,7 +32,6 @@ const Title = styled.div`
   background-size: cover;
   height: 206px;
   width: 647px;
-  margin: 70px auto 0 auto;
 `;
 
 const Card = styled.div`

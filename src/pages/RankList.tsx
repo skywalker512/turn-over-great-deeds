@@ -18,6 +18,10 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const Avatar = styled.div`
@@ -25,7 +29,7 @@ const Avatar = styled.div`
   height: 169px;
   width: 196px;
   background-image: url("${RankListAvatarPng}");
-  margin: 50px auto 25px auto;
+  margin: 0 auto 25px auto;
   position: relative;
   & > div {
     position: absolute;

@@ -29,6 +29,7 @@ interface ICardProps {
 const CardContent = styled(animated.div)`
   background-size: cover;
   position: absolute;
+  border-radius: 5px;
 `;
 const CardBackContent = styled(CardContent)`
   background-image: url(${CardBackPng});
@@ -41,6 +42,7 @@ const CardFrontContent = styled(CardContent)`
   align-items: center;
   div {
     background-size: cover;
+    border-radius: 5px;
   }
   span {
     margin-top: 16px;

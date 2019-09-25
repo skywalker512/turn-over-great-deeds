@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-px2vw';
-import Swiper from 'react-id-swiper';
 import RankListAvatarPng from '../assets/image/RankListAvatar.png';
 import RankListMyPng from '../assets/image/RankListMy.png';
 import RankListRankPng from '../assets/image/RankListRank.png';
@@ -11,7 +10,6 @@ import CPng from '../assets/image/3.png';
 import { Theme } from '../styled';
 import BaseBack from '../component/BaseBack';
 import { Back } from './Choose';
-import { SwiperOptions } from 'swiper';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -108,11 +106,14 @@ const CommonIcon = styled.div`
 const SwiperWrapper = styled.div`
   //height: 540px;
   //overflow: hidden;
-  width: 520px;
+  width: 560px;
   margin: 0 auto;
   overflow-y: auto;
   overflow-x: hidden;
   height: 600px;
+  & > div {
+    margin-left: -16px;
+  }
 `;
 
 interface data {
@@ -272,14 +273,6 @@ const RankListPage: React.FC = () => {
       Total: 400,
     },
   ];
-  const params: SwiperOptions = {
-    direction: 'vertical',
-    slidesPerView: 'auto',
-    freeMode: true,
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  };
   return (
     <Wrapper>
       <Back>

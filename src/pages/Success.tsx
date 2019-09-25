@@ -6,6 +6,7 @@ import { Theme } from '../styled';
 import SuccessTitlePng from '../assets/image/SuccessTitle.png';
 import SuccessCardPng from '../assets/image/SuccessCard.png';
 import { BaseRedButton } from '../component/BaseButton';
+import { RankListMyIcon, RankListRankIcon } from './RankList';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -36,11 +37,14 @@ const Card = styled(animated.div)`
 `;
 
 const Info = styled(animated.div)`
-  text-align: center;
   color: #f46b34;
   font-size: 36px;
   font-family: LeZhen, sans-serif;
   margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 `;
 
 const Back = styled(Link)`
@@ -73,8 +77,10 @@ const SuccessPage: React.FC = () => {
     <Wrapper>
       <Title style={Animation[2]} />
       <Info style={Animation[1]}>
-        <div>您的成绩: {result.totalTime}s</div>
-        <div>排名: {result.rank}</div>
+        <RankListMyIcon />
+        <span>我的: {result.totalTime}s</span>
+        <RankListRankIcon />
+        <span>排名: {result.rank}</span>
       </Info>
       <Card style={Animation[0]} />
       <animated.div style={Animation[2]}>

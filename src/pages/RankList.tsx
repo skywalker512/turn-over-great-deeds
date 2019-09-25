@@ -41,14 +41,14 @@ const Avatar = styled.div`
   }
 `;
 
-const RankListMyIcon = styled.div`
+export const RankListMyIcon = styled.div`
   background-image: url("${RankListMyPng}");
   height: 31px;
   width: 33px;
   background-size: cover;
   margin-right: 14px;
 `;
-const RankListRankIcon = styled.div`
+export const RankListRankIcon = styled.div`
   background-image: url("${RankListRankPng}");
   height: 32px;
   width: 48px;
@@ -62,6 +62,7 @@ const Info = styled.div`
   font-family: LeZhen, sans-serif;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 const Card = styled.div`
   background-size: cover;

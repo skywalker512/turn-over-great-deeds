@@ -38,7 +38,7 @@ const Card = styled.div`
   width: 667px;
   margin: 0 auto;
   & > div {
-    padding: 300px 100px 60px 100px;
+    padding: 300px 90px 0 120px;
   }
 `;
 

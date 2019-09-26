@@ -47,7 +47,7 @@ const IndexBadgeIcon = styled.div`
 const Button = styled.div`
   background-size: cover;
   height: 115px;
-  width: 310px;
+  width: 313px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +69,7 @@ const IndexOrangeButton = styled(Button)`
 const IndexRuleIcon = styled.div`
   background-image: url("${IndexRulePng}");
   background-size: cover;
-  height: 52px;
+  height: 53px;
   width: 44px;
 `;
 

@@ -31,8 +31,8 @@ const Content = styled.div`
   margin: 50px 50px 0 50px;
   color: #7c3d3f;
   .title {
-    font-size: 25px;
-    margin-bottom: 22px;
+    font-size: 30px;
+    margin-bottom: 12px;
     text-align: center;
   }
   .describe {
@@ -74,7 +74,10 @@ const SectionSwiper: React.FC = () => {
             />
             <Content>
               <div className="title">{item.content}</div>
-              <div className="describe">{item.describe}</div>
+              <div className="describe">
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                {item.describe}
+              </div>
             </Content>
           </div>
         ))}

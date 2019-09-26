@@ -46,8 +46,8 @@ const CardFrontContent = styled(CardContent)`
   }
   span {
     margin-top: 16px;
-    white-space: nowrap;
     transform-origin: top;
+    text-align: center;
   }
 `;
 const CardWrapper = styled(animated.div)`

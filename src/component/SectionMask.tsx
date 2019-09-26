@@ -12,6 +12,7 @@ import BaseTopPng from '../assets/image/BaseTop.png';
 import SectionSwiper from './SectionSwiper';
 import { BaseOrangeButton, BaseRedButton } from './BaseButton';
 import useInterval from '../utils/useInterval';
+import { usePass } from '../utils/useFetch';
 
 const Wrapper = styled.div`
   display: flex;
@@ -56,10 +57,10 @@ const Info = styled(animated.div)`
   font-size: 34px;
   color: #fef5d3;
   font-family: LeZhen, serif;
-  & > div:nth-child(1) {
-    margin-right: 50px;
-  }
   margin-bottom: 10px;
+  & > div:nth-child(2) {
+    margin-left: 50px;
+  }
 `;
 
 const InfoContent = styled.div`
@@ -88,7 +89,7 @@ const Control = styled.div`
   display: flex;
   justify-content: space-between;
   width: 366px;
-  margin: 36px auto 0 auto;
+  margin: 10px auto 0 auto;
 `;
 
 const Time: React.FC<{ time: number }> = ({ time }) => (
@@ -118,9 +119,6 @@ const SectionMask: React.FC = () => {
     },
     count > 0 ? 1000 : null,
   );
-  const time: number[] = JSON.parse(
-    window.localStorage.getItem('time') || JSON.stringify(Array(5).fill(-1)),
-  );
   const Animation = useTrail(3, {
     transform: 'translate3d(0,0%,0)',
     opacity: 1,
@@ -132,10 +130,10 @@ const SectionMask: React.FC = () => {
       friction: 80,
     },
   });
-  const result = {
-    time: 10,
-    isRecord: true,
-  };
+  const { data: result } = usePass(
+    stepNum,
+    Number(localStorage.getItem('time')),
+  );
   return (
     <Wrapper>
       <Title style={Animation[1]} />

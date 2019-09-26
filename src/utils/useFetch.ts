@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-const useFetch = (initialUrl: string, initialData: any) => {
+function useFetch<T>(initialUrl: string, initialData: T, postData?: any) {
   const [data, setData] = useState(initialData);
   const [url, setUrl] = useState(initialUrl);
   const [isLoading, setIsLoading] = useState(false);
@@ -11,25 +11,21 @@ const useFetch = (initialUrl: string, initialData: any) => {
     const fetchData = async () => {
       setIsError(false);
       setIsLoading(true);
-
       try {
         let body;
-        if (initialData) {
+        if (postData) {
           const formBody = [];
           // eslint-disable-next-line guard-for-in,no-restricted-syntax
-          for (const property in initialData) {
+          for (const property in postData) {
             const encodedKey = encodeURIComponent(property);
-            const encodedValue = encodeURIComponent(initialData[property]);
+            const encodedValue = encodeURIComponent(postData[property]);
             formBody.push(`${encodedKey}=${encodedValue}`);
           }
           body = formBody.join('&');
         }
-
         const result = await fetch(`http://94.191.3.170:8085${url}`, {
-          method: initialData ? 'POST' : 'GET',
-          mode: 'cors',
-          credentials: 'include',
-          body: initialData ? body : null,
+          method: postData ? 'POST' : 'GET',
+          body: postData ? body : null,
           headers: {
             'content-type': 'application/x-www-form-urlencoded',
             token: localStorage.getItem('id_token') || '',
@@ -37,7 +33,7 @@ const useFetch = (initialUrl: string, initialData: any) => {
         });
 
         if (!didCancel.current) {
-          setData(result);
+          result.json().then(a => setData(a));
         }
       } catch (error) {
         if (!didCancel.current) {
@@ -48,20 +44,53 @@ const useFetch = (initialUrl: string, initialData: any) => {
       setIsLoading(false);
     };
 
-    fetchData().catch(() => {
-      setIsError(true);
-    });
+    fetchData();
 
     return () => {
       didCancel.current = true;
     };
-  }, [initialData, url]);
+  }, [url]);
 
   const doFetch = (_url: string) => {
     setUrl(_url);
   };
 
-  return [data, isLoading, isError, doFetch];
+  return {
+    data,
+    isLoading,
+    isError,
+    doFetch,
+  };
+}
+
+export const usePassTime = () =>
+  useFetch('/allTime', {
+    One: -1,
+    Two: -1,
+    Three: -1,
+    Four: -1,
+    Five: -1,
+  });
+
+export const useRank = () =>
+  useFetch('/allRank', [
+    {
+      RedId: '',
+      NickName: '',
+      Total: -1,
+    },
+  ]);
+
+export const usePass = (stepNum: number, time: number) => {
+  const number = ['one', 'two', 'three', 'four', 'five'];
+  const step = number[stepNum - 1];
+  return useFetch('/pass', { isRecord: false, time: -1 }, { step, time });
 };
+
+export const usePassAll = () =>
+  useFetch('/addTotal', {
+    rank: -1,
+    totalTime: -1,
+  });
 
 export default useFetch;

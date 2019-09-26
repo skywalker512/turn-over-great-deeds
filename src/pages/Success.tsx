@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-px2vw';
 import { animated, useTrail } from 'react-spring';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,8 @@ import SuccessTitlePng from '../assets/image/SuccessTitle.png';
 import SuccessCardPng from '../assets/image/SuccessCard.png';
 import { BaseRedButton } from '../component/BaseButton';
 import { RankListMyIcon, RankListRankIcon } from './RankList';
+import { usePassAll } from '../utils/useFetch';
+import convertFloatToInt from '../utils/convertFloatToInt';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -69,16 +71,19 @@ const SuccessPage: React.FC = () => {
       friction: 80,
     },
   });
-  const result = {
-    rank: 4,
-    totalTime: 300,
-  };
+  const { data: result } = usePassAll();
+  useEffect(() => {
+    if (result.totalTime > 0) {
+      localStorage.setItem('totalTime', result.totalTime.toString());
+      localStorage.setItem('rank', result.rank.toString());
+    }
+  }, [result]);
   return (
     <Wrapper>
       <Title style={Animation[2]} />
       <Info style={Animation[1]}>
         <RankListMyIcon />
-        <span>我的: {result.totalTime}s</span>
+        <span>我的: {convertFloatToInt(result.totalTime)}s</span>
         <RankListRankIcon />
         <span>排名: {result.rank}</span>
       </Info>

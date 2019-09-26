@@ -31,7 +31,7 @@ const Content = styled.div`
   margin: 50px 50px 0 50px;
   color: #7c3d3f;
   .title {
-    font-size: 36px;
+    font-size: 25px;
     margin-bottom: 22px;
     text-align: center;
   }

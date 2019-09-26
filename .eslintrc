@@ -2,11 +2,12 @@
   "extends": ["react-app", "airbnb-typescript"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "react/prop-types": "off",
     "linebreak-style": ["error", "windows"],
     "react/jsx-one-expression-per-line": "off",
     "react/no-array-index-key": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "implicit-arrow-linebreak": "off"
   }
 }

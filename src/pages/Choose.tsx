@@ -7,6 +7,7 @@ import ChooseCard from '../assets/image/ChooseCard.png';
 import BaseUntiePng from '../assets/image/BaseUntie.png';
 import BaseLockUpPng from '../assets/image/BaseLockUp.png';
 import BaseBack from '../component/BaseBack';
+import { usePassTime } from '../utils/useFetch';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -68,9 +69,13 @@ const BaseUntieIcon = styled.div`
   width: 52px;
 `;
 
-const time = Array(5).fill(-1);
-
 const ChoosePage: React.FC = () => {
+  const { data } = usePassTime();
+  const time: number[] = [];
+  Object.keys(data).forEach(i => {
+    // @ts-ignore
+    time.push(data[i]);
+  });
   const { history } = useRouter();
   const handelClick = (step: number) => {
     history.push(`/section/${step}`);
@@ -84,7 +89,7 @@ const ChoosePage: React.FC = () => {
       <Card>
         <div>
           {time.map((item, index) => {
-            const isLocked = !(item > -1 || index === 0);
+            const isLocked = !(item > 0 || index === 0);
             return (
               <Item
                 key={index}
@@ -92,7 +97,7 @@ const ChoosePage: React.FC = () => {
                 onClick={() => isLocked || handelClick(index + 1)}
               >
                 <div className="index">{index + 1}</div>
-                <div className="time">{item > -1 ? item : '待挑战'}</div>
+                <div className="time">{item > 0 ? `${item}s` : '待挑战'}</div>
                 {isLocked ? <LockUpIcon /> : <BaseUntieIcon />}
               </Item>
             );

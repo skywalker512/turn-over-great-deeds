@@ -198,7 +198,7 @@ export const cardsSize: {
   },
   {
     width: 166,
-    height: 209,
+    height: 212,
     marginRight: 29,
     marginBottom: 29,
     imageHeight: 137,

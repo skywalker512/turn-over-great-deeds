@@ -30,7 +30,7 @@ const Content = styled(animated.div)`
   background-image: url(${SectionPassContentPng});
   background-size: cover;
   width: 660px;
-  height: 793px;
+  height: 853px;
   position: relative;
   & > div {
     padding: 134px 48px 0 50px;

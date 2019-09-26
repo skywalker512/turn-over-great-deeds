@@ -90,15 +90,16 @@ const ChoosePage: React.FC = () => {
         <div>
           {time.map((item, index) => {
             const isLocked = !(item > 0 || index === 0);
+            const canChoose = time[index - 1] > 0 || !isLocked;
             return (
               <Item
                 key={index}
                 style={{ color: isLocked ? '#ca9880' : '#f56c36' }}
-                onClick={() => isLocked || handelClick(index + 1)}
+                onClick={() => canChoose && handelClick(index + 1)}
               >
                 <div className="index">{index + 1}</div>
                 <div className="time">{item > 0 ? `${item}s` : '待挑战'}</div>
-                {isLocked ? <LockUpIcon /> : <BaseUntieIcon />}
+                {!canChoose ? <LockUpIcon /> : <BaseUntieIcon />}
               </Item>
             );
           })}

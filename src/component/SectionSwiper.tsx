@@ -30,10 +30,10 @@ const Image = styled.div`
 const Content = styled.div`
   margin: 50px 50px 0 50px;
   color: #7c3d3f;
-  text-align: center;
   .title {
     font-size: 36px;
     margin-bottom: 22px;
+    text-align: center;
   }
   .describe {
     font-size: 20px;
@@ -42,6 +42,7 @@ const Content = styled.div`
     display: -webkit-box;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
+    line-height: 30px;
   }
 `;
 

@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import font from './assets/font/LeZhen.css';
 import 'react-id-swiper/lib/styles/css/swiper.css';
+import './assets/constom.css';
 
 export const Theme = {
   color: {

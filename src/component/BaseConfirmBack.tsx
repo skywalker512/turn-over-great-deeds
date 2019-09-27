@@ -54,7 +54,7 @@ const BaseConfirmBack: React.FC<{ confirm: () => any; cancel: () => any }> = ({
       </Content>
       <Control>
         <BaseOrangeButton onClick={confirm}>确定</BaseOrangeButton>
-        <BaseRedButton onClick={cancel}>继续</BaseRedButton>
+        <BaseRedButton onClick={cancel}>取消</BaseRedButton>
       </Control>
     </Card>
   </Wrapper>

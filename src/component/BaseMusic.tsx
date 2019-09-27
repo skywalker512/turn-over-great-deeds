@@ -9,6 +9,7 @@ const IndexMusicIcon = styled.div`
   height: 44px;
   width: 58px;
   margin: 0 43px 0 auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
 const IndexMusicCloseIcon = styled.div`
@@ -17,6 +18,7 @@ const IndexMusicCloseIcon = styled.div`
   height: 44px;
   width: 58px;
   margin: 0 43px 0 auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
 const BaseMusic: React.FC = () => {

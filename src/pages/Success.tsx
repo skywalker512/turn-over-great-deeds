@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Theme } from '../styled';
 import SuccessTitlePng from '../assets/image/SuccessTitle.png';
 import SuccessCardPng from '../assets/image/SuccessCard.png';
-import { BaseRedButton } from '../component/BaseButton';
+import { BaseRedButton, BaseOrangeButton } from '../component/BaseButton';
 import { RankListMyIcon, RankListRankIcon } from './RankList';
 import { usePassAll } from '../utils/useFetch';
 import convertFloatToInt from '../utils/convertFloatToInt';
@@ -59,12 +59,18 @@ const Back = styled(Link)`
   }
 `;
 
+const Control = styled(animated.div)`
+  display: flex;
+  & > a:nth-child(1) {
+    margin-right: 40px;
+  }
+`
+
 const SuccessPage: React.FC = () => {
   const Animation = useTrail(3, {
     transform: 'translate3d(0,0%,0)',
     opacity: 1,
     from: { transform: 'translate3d(0,-100%,0)', opacity: 0 },
-    delay: 500,
     config: {
       mass: 8,
       tension: 500,
@@ -88,11 +94,14 @@ const SuccessPage: React.FC = () => {
         <span>排名: {result.rank}</span>
       </Info>
       <Card style={Animation[0]} />
-      <animated.div style={Animation[2]}>
+      <Control style={Animation[2]}>
+        <Back to="/rankList">
+          <BaseOrangeButton>排行榜</BaseOrangeButton>
+        </Back>
         <Back to="/">
           <BaseRedButton>返回首页</BaseRedButton>
         </Back>
-      </animated.div>
+      </Control>
     </Wrapper>
   );
 };

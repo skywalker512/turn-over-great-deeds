@@ -89,7 +89,9 @@ const Control = styled.div`
   display: flex;
   justify-content: space-between;
   width: 366px;
-  margin: 10px auto 0 auto;
+  position: absolute;
+  bottom: 50px;
+  left: 148px;
 `;
 
 const Time: React.FC<{ time: number }> = ({ time }) => (

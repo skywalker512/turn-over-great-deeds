@@ -7,6 +7,7 @@ import SectionTime from './SectionTime';
 import { ISectionRouterProp } from '../interface/ISectionRouterProp';
 import BaseMask from './BaseMask';
 import BaseConfirmBack from './BaseConfirmBack';
+import BaseMusic from './BaseMusic';
 
 const Header = styled.header`
   position: relative;
@@ -18,6 +19,15 @@ const Header = styled.header`
 const Text = styled.div`
   font-family: LeZhen, serif;
   font-size: 36px;
+`;
+
+const Music = styled.div`
+  position: absolute;
+  right: 60px;
+  & > div {
+    height: 34px;
+    width: 46px;
+  }
 `;
 
 const SectionHeader: React.FC = () => {
@@ -44,6 +54,9 @@ const SectionHeader: React.FC = () => {
       <Header>
         <BaseBack callback={handelBackClick} />
         <Text>第{stepNum}关</Text>
+        <Music>
+          <BaseMusic />
+        </Music>
         <SectionTime />
       </Header>
       {showConfirm && (

@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-px2vw';
 import IndexCardPng from '../assets/image/IndexCard.png';
 import IndexBadgePng from '../assets/image/IndexBadge.png';
-import IndexMusicPng from '../assets/image/IndexMusic.png';
 import IndexRulePng from '../assets/image/IndexRule.png';
 import IndexOrangeButtonPng from '../assets/image/IndexOrangeButton.png';
 import IndexRedButtonPng from '../assets/image/IndexRedButton.png';
 import IndexPopupPng from '../assets/image/IndexPopup.png';
 import BaseMask from '../component/BaseMask';
+import BaseMusic from '../component/BaseMusic';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -27,14 +27,6 @@ const Card = styled.div`
   background-size: cover;
   height: 1040px;
   width: 702px;
-`;
-
-const IndexMusicIcon = styled.div`
-  background-image: url("${IndexMusicPng}");
-  background-size: cover;
-  height: 44px;
-  width: 58px;
-  margin: 0 43px 0 auto;
 `;
 
 const IndexBadgeIcon = styled.div`
@@ -102,7 +94,7 @@ const IndexPage: React.FC = () => {
     <Wrapper className="index__Wrapper">
       <Control>
         <IndexBadgeIcon />
-        <IndexMusicIcon />
+        <BaseMusic />
         <IndexRuleIcon onClick={handelRuleButtonClick} />
       </Control>
       <Card>

@@ -80,6 +80,7 @@ const IndexPopup = styled.div`
   background-size: cover;
   height: 775px;
   width: 658px;
+  margin-top: -50px;
 `;
 
 const IndexPage: React.FC = () => {

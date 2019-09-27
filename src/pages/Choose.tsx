@@ -31,6 +31,7 @@ export const Back = styled.div`
 const Title = styled.div`
   background-image: url(${ChooseTitle});
   background-size: cover;
+  margin: 70px auto 0 auto;
   height: 206px;
   width: 647px;
 `;

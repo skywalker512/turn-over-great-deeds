@@ -144,10 +144,16 @@ const SectionMask: React.FC = () => {
       <Content style={Animation[0]}>
         <div>
           <SectionSwiper />
-          <Control>
-            <Link replace to="/">
-              <BaseOrangeButton>返回首页</BaseOrangeButton>
-            </Link>
+          <Control
+            style={{
+              justifyContent: stepNum === 5 ? 'center' : 'space-between',
+            }}
+          >
+            {stepNum !== 5 && (
+              <Link replace to="/">
+                <BaseOrangeButton>返回首页</BaseOrangeButton>
+              </Link>
+            )}
             {count > 0 && <BaseRedButton>{count}s</BaseRedButton>}
             {count < 1 && stepNum !== 5 && (
               <Link replace to={`/section/${stepNum + 1}`}>

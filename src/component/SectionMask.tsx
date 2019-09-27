@@ -45,7 +45,7 @@ const Content = styled(animated.div)`
     bottom: 0;
     background-image: url("${BaseTopPng}");
     background-size: cover;
-    margin-top: 10px;
+    margin-top: 20px;
     height: 171px;
     width: 660px;
     z-index: 2;

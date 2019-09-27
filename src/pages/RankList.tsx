@@ -102,6 +102,9 @@ const ItemWrapper = styled.div`
   }
   & > span:nth-child(2) {
     width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   & > span:nth-child(3) {
     font-family: LeZhen, sans-serif;
@@ -146,8 +149,8 @@ const Item: React.FC<data> = ({ NickName, Total, index = 0 }) => {
         />
       )}
       {index > 2 && <span className="list">{index + 1}</span>}
-      <span className="NickName"> {NickName}</span>
-      <span className="Total">{convertFloatToInt(Total)}s</span>
+      <span>{NickName}</span>
+      <span>{convertFloatToInt(Total)}s</span>
     </ItemWrapper>
   );
 };

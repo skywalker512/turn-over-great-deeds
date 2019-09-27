@@ -22,9 +22,8 @@ const Wrapper = styled.div`
 const Image = styled.div`
   background-size: cover;
   height: 325px;
-  width: 485px;
+  width: 560px;
   margin: 0 auto;
-  border-radius: 10px;
 `;
 
 const Content = styled.div`
@@ -55,7 +54,6 @@ const SectionSwiper: React.FC = () => {
   const cardData = CardDatas[stepNum - 1];
   const config: SwiperOptions = {
     slidesPerView: 'auto',
-    spaceBetween: -30,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,

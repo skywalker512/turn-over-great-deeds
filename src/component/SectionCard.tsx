@@ -99,7 +99,9 @@ const Card: React.FC<ICardProps> = ({
         height,
         width,
         marginRight,
+        marginLeft: marginRight,
         marginBottom,
+        marginTop: marginBottom,
         ...props,
       }}
       onClick={onClick}

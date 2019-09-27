@@ -172,8 +172,8 @@ export const cardsSize: {
   {
     width: 282,
     height: 359,
-    marginRight: 34,
-    marginBottom: 36,
+    marginRight: 17,
+    marginBottom: 18,
     imageHeight: 232,
     imageWidth: 245,
     fontSize: 24,
@@ -190,8 +190,8 @@ export const cardsSize: {
   {
     width: 195,
     height: 250,
-    marginRight: 24,
-    marginBottom: 26,
+    marginRight: 12,
+    marginBottom: 13,
     imageHeight: 160,
     imageWidth: 165,
     fontSize: 20,
@@ -199,8 +199,8 @@ export const cardsSize: {
   {
     width: 166,
     height: 212,
-    marginRight: 29,
-    marginBottom: 29,
+    marginRight: 14.5,
+    marginBottom: 14.5,
     imageHeight: 137,
     imageWidth: 145,
     fontSize: 16,
@@ -208,8 +208,8 @@ export const cardsSize: {
   {
     width: 149,
     height: 190,
-    marginRight: 28,
-    marginBottom: 30,
+    marginRight: 14,
+    marginBottom: 15,
     imageHeight: 125,
     imageWidth: 131,
     fontSize: 14,

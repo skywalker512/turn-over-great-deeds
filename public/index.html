@@ -24,12 +24,12 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>伟大成就翻翻乐</title>
     <script>
       const token = document.location.hash.split('#/?token=')[1];
       if (!localStorage.getItem('id_token') && !token) {
         window.location.href =
-          'https://wx.redrock.team/magicloop/rushb?b=http://94.191.3.170:8085/token&scope=base';
+          'https://wx.redrock.team/magicloop/rushb?b=https://test.cqupt.atowerlight.cn/token&scope=base';
       }
       document.location.hash = '#/?refresh=123';
       if (token && token.length) {

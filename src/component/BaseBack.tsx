@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-px2vw';
+import useRouter from 'use-react-router';
 import BaseBackPng from '../assets/image/BaseBack.png';
 
 const Icon = styled.div`
@@ -12,10 +13,11 @@ const Icon = styled.div`
   top: 0;
 `;
 const BaseBack: React.FC<{ callback?: () => any }> = ({ callback }) => {
+  const { history } = useRouter();
   const handelClick = () => {
     const BackEvent = new Event('cback');
-    window.history.go(-1);
     window.dispatchEvent(BackEvent);
+    history.replace('/');
   };
   return <Icon onClick={callback || handelClick} />;
 };

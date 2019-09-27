@@ -33,7 +33,7 @@ const SectionHeader: React.FC = () => {
     window.dispatchEvent(new Event('cardSuspend'));
   };
   const handelConfirmClick = () => {
-    history.push('/');
+    history.replace('/');
   };
   const handelCancelClick = () => {
     setShowConfirm(false);

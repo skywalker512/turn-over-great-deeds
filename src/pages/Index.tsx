@@ -106,10 +106,10 @@ const IndexPage: React.FC = () => {
         <IndexRuleIcon onClick={handelRuleButtonClick} />
       </Control>
       <Card>
-        <Link to="/choose">
+        <Link replace to="/choose">
           <IndexRedButton>开始游戏</IndexRedButton>
         </Link>
-        <Link to="/rankList">
+        <Link replace to="/rankList">
           <IndexOrangeButton>排行榜</IndexOrangeButton>
         </Link>
       </Card>

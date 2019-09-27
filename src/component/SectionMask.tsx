@@ -145,17 +145,17 @@ const SectionMask: React.FC = () => {
         <div>
           <SectionSwiper />
           <Control>
-            <Link to="/">
+            <Link replace to="/">
               <BaseOrangeButton>返回首页</BaseOrangeButton>
             </Link>
             {count > 0 && <BaseRedButton>{count}s</BaseRedButton>}
             {count < 1 && stepNum !== 5 && (
-              <Link to={`/section/${stepNum + 1}`}>
+              <Link replace to={`/section/${stepNum + 1}`}>
                 <BaseRedButton>下一关</BaseRedButton>
               </Link>
             )}
             {count < 1 && stepNum === 5 && (
-              <Link to="/success">
+              <Link replace to="/success">
                 <BaseOrangeButton>挑战成功</BaseOrangeButton>
               </Link>
             )}

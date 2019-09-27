@@ -78,7 +78,7 @@ const ChoosePage: React.FC = () => {
   });
   const { history } = useRouter();
   const handelClick = (step: number) => {
-    history.push(`/section/${step}`);
+    history.replace(`/section/${step}`);
   };
   return (
     <Wrapper>

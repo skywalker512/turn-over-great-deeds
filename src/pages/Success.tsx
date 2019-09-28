@@ -64,7 +64,7 @@ const Control = styled(animated.div)`
   & > a:nth-child(1) {
     margin-right: 40px;
   }
-`
+`;
 
 const SuccessPage: React.FC = () => {
   const Animation = useTrail(3, {
@@ -95,10 +95,10 @@ const SuccessPage: React.FC = () => {
       </Info>
       <Card style={Animation[0]} />
       <Control style={Animation[2]}>
-        <Back to="/">
+        <Back replace to="/">
           <BaseRedButton>返回首页</BaseRedButton>
         </Back>
-        <Back to="/rankList">
+        <Back replace to="/rankList">
           <BaseOrangeButton>排行榜</BaseOrangeButton>
         </Back>
       </Control>

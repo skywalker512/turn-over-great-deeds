@@ -43,6 +43,7 @@ const Content = styled.div`
     margin: 0 32px !important;
     color: #7c3d3f;
     font-family: LeZhen, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 `;
 

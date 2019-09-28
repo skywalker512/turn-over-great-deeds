@@ -23,7 +23,7 @@ const Text = styled.div`
 
 const Music = styled.div`
   position: absolute;
-  right: 60px;
+  right: 75px;
   & > div {
     height: 34px;
     width: 46px;

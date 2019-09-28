@@ -95,11 +95,11 @@ const SuccessPage: React.FC = () => {
       </Info>
       <Card style={Animation[0]} />
       <Control style={Animation[2]}>
-        <Back to="/rankList">
-          <BaseOrangeButton>排行榜</BaseOrangeButton>
-        </Back>
         <Back to="/">
           <BaseRedButton>返回首页</BaseRedButton>
+        </Back>
+        <Back to="/rankList">
+          <BaseOrangeButton>排行榜</BaseOrangeButton>
         </Back>
       </Control>
     </Wrapper>

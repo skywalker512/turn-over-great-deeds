@@ -71,7 +71,7 @@ const Card = styled.div`
   background-size: cover;
   background-image: url("${RankListCardPng}");
   height: 882px;
-  width: 670px;
+  width: 678px;
   margin: 11px auto 0 auto;
 `;
 
@@ -118,8 +118,6 @@ const CommonIcon = styled.div`
 `;
 
 const SwiperWrapper = styled.div`
-  //height: 540px;
-  //overflow: hidden;
   width: 560px;
   margin: 0 auto;
   overflow-y: auto;

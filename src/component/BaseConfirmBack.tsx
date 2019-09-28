@@ -14,7 +14,7 @@ const Card = styled(animated.div)`
   background-image: url("${BaseCardPng}");
   background-size: cover;
   height: 628px;
-  width: 535px;
+  width: 541px;
   font-family: LeZhen, sans-serif;
 `;
 

@@ -40,7 +40,7 @@ const Card = styled.div`
   background-image: url(${ChooseCard});
   background-size: cover;
   height: 948px;
-  width: 667px;
+  width: 669px;
   margin: 0 auto;
   & > div {
     padding: 300px 100px 0 100px;

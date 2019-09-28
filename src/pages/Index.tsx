@@ -6,6 +6,7 @@ import IndexBadgePng from '../assets/image/IndexBadge.png';
 import IndexRulePng from '../assets/image/IndexRule.png';
 import IndexOrangeButtonPng from '../assets/image/IndexOrangeButton.png';
 import IndexRedButtonPng from '../assets/image/IndexRedButton.png';
+import IndexShadowPng from '../assets/image/IndexShadow.png';
 import BaseMask from '../component/BaseMask';
 import BaseMusic from '../component/BaseMusic';
 import IndexPopup from '../component/IndexPopup';
@@ -27,6 +28,17 @@ const Card = styled.div`
   background-size: cover;
   height: 1040px;
   width: 702px;
+  & > a {
+    position: relative;
+  }
+  .redShadow {
+    top: 727px;
+    left: 195px;
+  }
+  .orangeShadow {
+    top: 50px;
+    left: 195px;
+  }
 `;
 
 const IndexBadgeIcon = styled.div`
@@ -39,7 +51,7 @@ const IndexBadgeIcon = styled.div`
 const Button = styled.div`
   background-size: cover;
   height: 115px;
-  width: 313px;
+  width: 315px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,6 +59,8 @@ const Button = styled.div`
   font-family: LeZhen, sans-serif;
   font-size: 52px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 `;
 const IndexRedButton = styled(Button)`
   background-image: url("${IndexRedButtonPng}");
@@ -75,6 +89,16 @@ const Control = styled.div`
   align-items: center;
 `;
 
+const Shadow = styled.div`
+    position: absolute;
+    z-index: 0;
+    background-image: url("${IndexShadowPng}");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 104px;
+    width: 311px;
+`;
+
 const IndexPage: React.FC = () => {
   const [showMask, setShowMask] = useState(false);
   const handelRuleButtonClick = () => {
@@ -93,9 +117,11 @@ const IndexPage: React.FC = () => {
       <Card>
         <Link replace to="/choose">
           <IndexRedButton>开始游戏</IndexRedButton>
+          <Shadow className="redShadow" />
         </Link>
         <Link replace to="/rankList">
           <IndexOrangeButton>排行榜</IndexOrangeButton>
+          <Shadow className="orangeShadow" />
         </Link>
       </Card>
       {showMask && (

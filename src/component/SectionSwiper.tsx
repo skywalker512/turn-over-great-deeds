@@ -8,7 +8,7 @@ import CardDatas from '../data/card';
 
 const Wrapper = styled.div`
   .swiper-pagination {
-    top: 325px !important;
+    top: 305px !important;
   }
   .swiper-pagination-bullet-active {
     background-color: #fe887f !important;
@@ -16,21 +16,23 @@ const Wrapper = styled.div`
   .swiper-pagination-bullet {
     background-color: #fed5a5;
     opacity: 1;
+    width: 10px;
+    height: 10px;
   }
 `;
 
 const Image = styled.div`
   background-size: cover;
-  height: 325px;
+  height: 315px;
   width: 560px;
   margin: 0 auto;
 `;
 
 const Content = styled.div`
-  margin: 50px 50px 0 50px;
+  margin: 40px 50px 0 50px;
   color: #7c3d3f;
   .title {
-    font-size: 30px;
+    font-size: 36px;
     margin-bottom: 12px;
     text-align: center;
   }
@@ -41,7 +43,7 @@ const Content = styled.div`
     display: -webkit-box;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
-    line-height: 30px;
+    line-height: 32px;
   }
 `;
 

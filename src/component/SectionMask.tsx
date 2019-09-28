@@ -31,7 +31,7 @@ const Content = styled(animated.div)`
   background-image: url(${SectionPassContentPng});
   background-size: cover;
   width: 660px;
-  height: 853px;
+  height: 866px;
   position: relative;
   & > div {
     padding: 134px 48px 0 50px;
@@ -90,7 +90,7 @@ const Control = styled.div`
   justify-content: space-between;
   width: 366px;
   position: absolute;
-  bottom: 50px;
+  bottom: 64px;
   left: 148px;
 `;
 

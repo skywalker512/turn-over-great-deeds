@@ -29,7 +29,7 @@ const Image = styled.div`
 `;
 
 const Content = styled.div`
-  margin: 40px 50px 0 50px;
+  margin: 40px 20px 0 20px;
   color: #7c3d3f;
   .title {
     font-size: 36px;

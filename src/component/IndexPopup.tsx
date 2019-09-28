@@ -49,14 +49,13 @@ const Content = styled.div`
 `;
 
 const IndexPopup: React.FC = () => {
-  const title = ['活动规则', '活动背景'];
+  const title = ['制作背景', '游戏规则'];
   const config: SwiperOptions = {
     slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
       renderBullet(index, className) {
-        console.log(className);
         return `<span class="${className}">${title[index]}</span>`;
       },
     },
@@ -67,6 +66,16 @@ const IndexPopup: React.FC = () => {
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Swiper {...config}>
           <div>
+            <p style={{ lineHeight: '5.7vw' }}>
+              2019年是新中国成立70周年。
+              70年砥砺奋进，祖国发生了翻天覆地变化，取得辉煌成就，
+              在中华民族历史甚至是世界历史上，写下了感天动地的奋斗史诗。
+              重庆邮电大学红岩网校工作站特开发小游戏“伟大成就翻翻乐”，
+              与广大青年学子一起回顾新中国成立70年来取得的历史性成就，
+              用青春为祖国点赞，共同祝愿祖国繁荣昌盛！
+            </p>
+          </div>
+          <div>
             <p>1.玩家进入游戏后，可选择关卡参与挑战</p>
             <p>
               2.游戏结束后，玩家可以根据通关时间参与排名，排名靠前的玩家可获得奖品。
@@ -76,16 +85,6 @@ const IndexPopup: React.FC = () => {
             </p>
             <p>
               4.在活动时间截止前，排行榜前30名玩家，将可获得精美奖品。奖品发布时间将在活动结束后通知，请关注重邮小帮手抢先了解获奖情况
-            </p>
-          </div>
-          <div>
-            <p style={{ lineHeight: '5.7vw' }}>
-              2019年是新中国成立70周年。
-              70年砥砺奋进，祖国发生了翻天覆地变化，取得辉煌成就，
-              在中华民族历史甚至是世界历史上，写下了感天动地的奋斗史诗。
-              重庆邮电大学红岩网校工作站特开发小游戏“伟大成就翻翻乐”，
-              与广大青年学子一起回顾新中国成立70年来取得的历史性成就，
-              用青春为祖国点赞，共同祝愿祖国繁荣昌盛！
             </p>
           </div>
         </Swiper>

@@ -8,7 +8,7 @@ const IndexMusicIcon = styled.div`
   background-size: cover;
   height: 44px;
   width: 58px;
-  margin: 0 43px 0 auto;
+  margin: 0 40px 0 auto;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
@@ -17,7 +17,7 @@ const IndexMusicCloseIcon = styled.div`
   background-size: cover;
   height: 44px;
   width: 58px;
-  margin: 0 43px 0 auto;
+  margin: 0 40px 0 auto;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 

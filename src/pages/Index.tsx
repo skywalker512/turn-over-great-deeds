@@ -6,9 +6,9 @@ import IndexBadgePng from '../assets/image/IndexBadge.png';
 import IndexRulePng from '../assets/image/IndexRule.png';
 import IndexOrangeButtonPng from '../assets/image/IndexOrangeButton.png';
 import IndexRedButtonPng from '../assets/image/IndexRedButton.png';
-import IndexPopupPng from '../assets/image/IndexPopup.png';
 import BaseMask from '../component/BaseMask';
 import BaseMusic from '../component/BaseMusic';
+import IndexPopup from '../component/IndexPopup';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -32,8 +32,8 @@ const Card = styled.div`
 const IndexBadgeIcon = styled.div`
   background-image: url("${IndexBadgePng}");
   background-size: cover;
-  height: 56px;
-  width: 56px;
+  height: 44px;
+  width: 63px;
 `;
 
 const Button = styled.div`
@@ -61,8 +61,8 @@ const IndexOrangeButton = styled(Button)`
 const IndexRuleIcon = styled.div`
   background-image: url("${IndexRulePng}");
   background-size: cover;
-  height: 53px;
-  width: 44px;
+  height: 45px;
+  width: 45px;
 `;
 
 const Control = styled.div`
@@ -73,14 +73,6 @@ const Control = styled.div`
   height: 56px;
   display: flex;
   align-items: center;
-`;
-
-const IndexPopup = styled.div`
-  background-image: url("${IndexPopupPng}");
-  background-size: cover;
-  height: 775px;
-  width: 658px;
-  margin-top: -60px;
 `;
 
 const IndexPage: React.FC = () => {

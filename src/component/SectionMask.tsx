@@ -34,7 +34,7 @@ const Content = styled(animated.div)`
   height: 866px;
   position: relative;
   & > div {
-    padding: 134px 48px 0 50px;
+    padding: 134px 50px 0 50px;
   }
   &::before {
     content: '';

@@ -9,6 +9,7 @@ import RankListPage from './pages/RankList';
 import SectionPage from './pages/Section';
 import { PositionAll } from './styled';
 import SuccessPage from './pages/Success';
+import BaseAudio from './component/BaseAudio';
 
 const Container = styled(animated.div)`
   position: absolute;
@@ -31,13 +32,16 @@ const AnimatedRoute: React.FC = ({ children }) => {
 };
 
 const App: React.FC = () => (
-  <AnimatedRoute>
-    <Route exact path="/" component={IndexPage} />
-    <Route exact path="/choose" component={ChoosePage} />
-    <Route exact path="/rankList" component={RankListPage} />
-    <Route exact path="/section/:step" component={SectionPage} />
-    <Route exact path="/success" component={SuccessPage} />
-  </AnimatedRoute>
+  <>
+    <BaseAudio />
+    <AnimatedRoute>
+      <Route exact path="/" component={IndexPage} />
+      <Route exact path="/choose" component={ChoosePage} />
+      <Route exact path="/rankList" component={RankListPage} />
+      <Route exact path="/section/:step" component={SectionPage} />
+      <Route exact path="/success" component={SuccessPage} />
+    </AnimatedRoute>
+  </>
 );
 
 export default App;

@@ -23,7 +23,7 @@ function useFetch<T>(initialUrl: string, initialData: T, postData?: any) {
           }
           body = formBody.join('&');
         }
-        const result = await fetch(`http://94.191.3.170:8085${url}`, {
+        const result = await fetch(`${process.env.REACT_APP_BE_URL}${url}`, {
           method: postData ? 'POST' : 'GET',
           body: postData ? body : null,
           headers: {
@@ -43,12 +43,12 @@ function useFetch<T>(initialUrl: string, initialData: T, postData?: any) {
 
       setIsLoading(false);
     };
-
     fetchData();
 
     return () => {
       didCancel.current = true;
     };
+    // eslint-disable-next-line
   }, [url]);
 
   const doFetch = (_url: string) => {

@@ -47,6 +47,9 @@
     <audio src="./1.mp3" autoplay loop id="mp3"> </audio>
     <script>
       var mp3Element = document.getElementById('mp3');
+      if (localStorage.getItem('musicStop')) {
+        mp3Element.pause();
+      }
       window.addEventListener('musicPlay', function() {
         mp3Element.play();
       });

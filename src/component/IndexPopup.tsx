@@ -8,22 +8,23 @@ const Wrapper = styled.div`
   background-image: url("${IndexPopupPng}");
   background-size: cover;
   height: 775px;
-  width: 658px;
+  width: 666px;
   margin-top: -60px;
   position: relative;
 `;
 
 const Content = styled.div`
-  width: 472px;
+  width: 549px;
   & > div {
     padding-top: 300px;
   }
   margin: 0 auto;
   position: relative;
   p {
+    width: 472px;
+    margin: 0 auto 30px auto;
     font-size: 24px;
     line-height: 28px;
-    margin-bottom: 30px;
   }
   .swiper-pagination {
     position: absolute;

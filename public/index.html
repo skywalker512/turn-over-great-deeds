@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="user-scalable=no">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1">
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -29,7 +30,7 @@
       const token = document.location.hash.split('#/?token=')[1];
       if (!localStorage.getItem('id_token') && !token) {
         window.location.href =
-          'https://wx.redrock.team/magicloop/rushb?b=https://test.cqupt.atowerlight.cn/token&scope=base';
+          'https://wx.redrock.team/magicloop/rushb?b=%REACT_APP_BE_URL%token&scope=base';
       }
       document.location.hash = '#/?refresh=123';
       if (token && token.length) {

@@ -28,15 +28,13 @@ const Card = styled.div`
   background-size: cover;
   height: 1040px;
   width: 702px;
-  & > a {
-    position: relative;
-  }
+  position: absolute;
   .redShadow {
     top: 727px;
     left: 195px;
   }
   .orangeShadow {
-    top: 50px;
+    top: 854px;
     left: 195px;
   }
 `;
@@ -117,12 +115,12 @@ const IndexPage: React.FC = () => {
       <Card>
         <Link replace to="/choose">
           <IndexRedButton>开始游戏</IndexRedButton>
-          <Shadow className="redShadow" />
         </Link>
         <Link replace to="/rankList">
           <IndexOrangeButton>排行榜</IndexOrangeButton>
-          <Shadow className="orangeShadow" />
         </Link>
+        <Shadow className="redShadow" />
+        <Shadow className="orangeShadow" />
       </Card>
       {showMask && (
         <BaseMask clickCallback={handelPopupClick}>

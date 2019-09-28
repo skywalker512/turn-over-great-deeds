@@ -73,7 +73,7 @@ const SectionSwiper: React.FC = () => {
             <Content>
               <div className="title">{item.content}</div>
               <div className="describe">
-                <span>&nbsp;&nbsp;&nbsp;</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 {item.describe}
               </div>
             </Content>

@@ -139,7 +139,7 @@ const SectionCardWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   position: absolute;
-  top: 110px;
+  top: 80px;
   left: 0;
   right: 0;
   bottom: 0;

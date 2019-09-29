@@ -28,5 +28,6 @@ export const GlobalStyle = createGlobalStyle`
      ${PositionAll};
      overflow: hidden;
      color: ${Theme.color.mainFontColor};
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 `;

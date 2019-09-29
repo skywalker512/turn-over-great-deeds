@@ -7,7 +7,7 @@ import IndexPopupPng from '../assets/image/IndexPopup.png';
 const Wrapper = styled.div`
   background-image: url("${IndexPopupPng}");
   background-size: cover;
-  height: 775px;
+  height: 808px;
   width: 666px;
   margin-top: -60px;
   position: relative;
@@ -16,15 +16,15 @@ const Wrapper = styled.div`
 const Content = styled.div`
   width: 549px;
   & > div {
-    padding-top: 300px;
+    padding-top: 290px;
   }
   margin: 0 auto;
   position: relative;
   p {
     width: 472px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 20px auto;
     font-size: 24px;
-    line-height: 28px;
+    line-height: 32px;
   }
   .swiper-pagination {
     position: absolute;
@@ -76,7 +76,10 @@ const IndexPopup: React.FC = () => {
             </p>
           </div>
           <div>
-            <p>1.玩家进入游戏后，可选择关卡参与挑战</p>
+            <p>
+              1.玩家进入游戏后，可选择关卡参与挑战,
+              参与者连续找出两张相同图片即可将其消除成功，当所有图片消除后即闯关成功。
+            </p>
             <p>
               2.游戏结束后，玩家可以根据通关时间参与排名，排名靠前的玩家可获得奖品。
             </p>

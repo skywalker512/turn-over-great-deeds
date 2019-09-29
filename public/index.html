@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="user-scalable=no">
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1">
+    <meta name="viewport" content="user-scalable=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -27,17 +27,18 @@
     -->
     <title>伟大成就翻翻乐</title>
     <script>
-      const token = document.location.hash.split('#/?token=')[1];
+      var token = document.location.hash.split('#/?token=')[1];
       if (!localStorage.getItem('id_token') && !token) {
         window.location.href =
-          'https://wx.redrock.team/magicloop/rushb?b=%REACT_APP_BE_URL%token&scope=base';
+          'https://wx.redrock.team/magicloop/rushb?b=%REACT_APP_BE_URL%/token&scope=tmpbase';
       }
       document.location.hash = '#/?refresh=123';
       if (token && token.length) {
+        token = token.replace(/%20/g, '+');
         document.location.hash = '#/';
         localStorage.setItem('id_token', token);
-        const { redId, headImgUrl } = JSON.parse(atob(token));
-        localStorage.setItem('redId', redId);
+        const { openid, headImgUrl } = JSON.parse(atob(token));
+        localStorage.setItem('openid', openid);
         localStorage.setItem('headImgUrl', headImgUrl);
       }
     </script>

@@ -164,7 +164,7 @@ const RankListPage: React.FC = () => {
     (
       localStorage.getItem('headImgUrl') ||
       `https://cdn.v2ex.com/gravatar/${localStorage.getItem(
-        'redId',
+        'openid',
       )}?s=128&d=retro`
     ).replace(/^http:\/\//i, 'https://'),
   );
@@ -200,7 +200,7 @@ const RankListPage: React.FC = () => {
                 NickName={item.NickName}
                 Total={item.Total}
                 index={index}
-                key={item.RedId}
+                key={item.OpenId}
               />
             ))}
           </div>

@@ -75,7 +75,7 @@ export const usePassTime = () =>
 export const useRank = () =>
   useFetch('/allRank', [
     {
-      RedId: '',
+      OpenId: '',
       NickName: '',
       Total: -1,
     },

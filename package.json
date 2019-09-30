@@ -8,6 +8,7 @@
     "react-id-swiper": "^2.3.2",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
+    "react-router-ga": "^1.2.1",
     "react-scripts": "3.1.2",
     "react-spring": "^8.0.27",
     "styled-components": "^4.3.2",

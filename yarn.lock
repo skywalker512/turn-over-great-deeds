@@ -8206,6 +8206,11 @@ react-router-dom@^5.0.1:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
+react-router-ga@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.npm.taobao.org/react-router-ga/download/react-router-ga-1.2.1.tgz#5ce10dbe4f51b4a856af8cf308e17f801b70cf70"
+  integrity sha1-XOENvk9RtKhWr4zzCOF/gBtwz3A=
+
 react-router@5.0.1, react-router@^5.0.1:
   version "5.0.1"
   resolved "https://registry.npm.taobao.org/react-router/download/react-router-5.0.1.tgz#04ee77df1d1ab6cb8939f9f01ad5702dbadb8b0f"

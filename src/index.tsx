@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter } from 'react-router-dom';
+// @ts-ignore
+import Analytics from 'react-router-ga';
 import { Normalize } from 'styled-normalize';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -8,9 +10,11 @@ import { GlobalStyle } from './styled';
 
 ReactDOM.render(
   <HashRouter>
-    <Normalize />
-    <GlobalStyle />
-    <App />
+    <Analytics id={process.env.REACT_APP_GA}>
+      <Normalize />
+      <GlobalStyle />
+      <App />
+    </Analytics>
   </HashRouter>,
   document.getElementById('root'),
 );

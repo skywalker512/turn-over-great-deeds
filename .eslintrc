@@ -1,5 +1,5 @@
 {
-  "extends": ["react-app", "airbnb-typescript"],
+  "extends": ["plugin:prettier/recommended", "react-app", "airbnb-typescript"],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "warn",
@@ -8,6 +8,9 @@
     "react/jsx-one-expression-per-line": "off",
     "react/no-array-index-key": "off",
     "operator-linebreak": "off",
-    "implicit-arrow-linebreak": "off"
+    "implicit-arrow-linebreak": "off",
+    "object-curly-newline": "off",
+    "no-plusplus": "off",
+    "function-paren-newline": "off"
   }
 }

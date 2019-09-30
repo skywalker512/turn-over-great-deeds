@@ -9,6 +9,7 @@ import { BaseRedButton, BaseOrangeButton } from '../component/BaseButton';
 import { RankListMyIcon, RankListRankIcon } from './RankList';
 import { usePassAll } from '../utils/useFetch';
 import convertFloatToInt from '../utils/convertFloatToInt';
+import Snowfall from '../snowfall/Snowfal';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -36,6 +37,7 @@ const Card = styled(animated.div)`
   height: 469px;
   width: 672px;
   margin: 0 auto;
+  z-index: 1;
 `;
 
 const Info = styled(animated.div)`
@@ -66,6 +68,14 @@ const Control = styled(animated.div)`
   }
 `;
 
+const Snow = styled.div`
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  top: 120px;
+  z-index: 0;
+`;
+
 const SuccessPage: React.FC = () => {
   const Animation = useTrail(3, {
     transform: 'translate3d(0,0%,0)',
@@ -85,24 +95,35 @@ const SuccessPage: React.FC = () => {
     }
   }, [result]);
   return (
-    <Wrapper>
-      <Title style={Animation[2]} />
-      <Info style={Animation[1]}>
-        <RankListMyIcon />
-        <span>我的: {convertFloatToInt(result.totalTime)}s</span>
-        <RankListRankIcon />
-        <span>排名: {result.rank}</span>
-      </Info>
-      <Card style={Animation[0]} />
-      <Control style={Animation[2]}>
-        <Back replace to="/">
-          <BaseRedButton>返回首页</BaseRedButton>
-        </Back>
-        <Back replace to="/rankList">
-          <BaseOrangeButton>排行榜</BaseOrangeButton>
-        </Back>
-      </Control>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Title style={Animation[2]}>
+          <Snow>
+            <Snowfall
+              // Changes the snowflake color
+              color="red"
+              // Controls the number of snowflakes that are created (default 150)
+              snowflakeCount={40}
+            />
+          </Snow>
+        </Title>
+        <Info style={Animation[1]}>
+          <RankListMyIcon />
+          <span>我的: {convertFloatToInt(result.totalTime)}s</span>
+          <RankListRankIcon />
+          <span>排名: {result.rank}</span>
+        </Info>
+        <Card style={Animation[0]} />
+        <Control style={Animation[2]}>
+          <Back replace to="/">
+            <BaseRedButton>返回首页</BaseRedButton>
+          </Back>
+          <Back replace to="/rankList">
+            <BaseOrangeButton>排行榜</BaseOrangeButton>
+          </Back>
+        </Control>
+      </Wrapper>
+    </>
   );
 };
 

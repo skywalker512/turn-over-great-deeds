@@ -34,7 +34,7 @@ const Title = styled(animated.div)`
 const Card = styled(animated.div)`
   background-size: cover;
   background-image: url("${SuccessCardPng}");
-  height: 469px;
+  height: 539px;
   width: 672px;
   margin: 0 auto;
   z-index: 1;

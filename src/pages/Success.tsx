@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-px2vw';
-import { animated, useTrail } from 'react-spring';
+import { animated, useSpring, useTrail } from 'react-spring';
 import { Link } from 'react-router-dom';
 import { Theme } from '../styled';
 import SuccessTitlePng from '../assets/image/SuccessTitle.png';
@@ -68,7 +68,7 @@ const Control = styled(animated.div)`
   }
 `;
 
-const Snow = styled.div`
+const Snow = styled(animated.div)`
   position: absolute;
   height: 200%;
   width: 100%;
@@ -87,6 +87,16 @@ const SuccessPage: React.FC = () => {
       friction: 80,
     },
   });
+  const SnowAnimation = useSpring({
+    opacity: 0,
+    from: { opacity: 1 },
+    config: {
+      mass: 8,
+      tension: 500,
+      friction: 80,
+    },
+    delay: 1000,
+  });
   const { data: result } = usePassAll();
   useEffect(() => {
     if (result.totalTime > 0) {
@@ -98,7 +108,7 @@ const SuccessPage: React.FC = () => {
     <>
       <Wrapper>
         <Title style={Animation[2]}>
-          <Snow>
+          <Snow style={SnowAnimation}>
             <Snowfall
               // Changes the snowflake color
               color="red"

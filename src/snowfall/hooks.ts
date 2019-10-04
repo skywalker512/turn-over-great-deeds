@@ -93,6 +93,7 @@ export const useSnowflakes = (
 
       return snowflakes;
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [amount, canvasRef, config]);
 
   // Handle change of config
@@ -136,7 +137,7 @@ export const useComponentSize = (
 
     if (typeof ResizeObserver === 'function') {
       const resizeObserver = new ResizeObserver(resizeHandler);
-      resizeObserver.observe(ref.current);
+      resizeObserver.observe(ref.current as HTMLElement);
 
       // eslint-disable-next-line consistent-return
       return () => resizeObserver.disconnect();

@@ -48,6 +48,17 @@
 
 使用 [Create React App](https://github.com/facebook/create-react-app) 创建，按照标准即可完成
 
+环境变量文件 根目录 `.env`
+
+```
+REACT_APP_BE_URL=https://***
+REACT_APP_GA=UA-****-*
+REACT_APP_NAME=**
+REACT_APP_DESC=****
+REACT_APP_ICO=https://***/favicon.ico
+REACT_APP_FE_URL=https://***/#/
+```
+
 ## 注意点
 
 1. 移动端 click 300 ms 延迟

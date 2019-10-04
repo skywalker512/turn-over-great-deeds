@@ -89,6 +89,7 @@
   - postData 因为本项目只有 get 和 post 所以直接以是否有该来进行判断
 
   ```js
+  // src/utils/useFetch.ts
   function useFetch<T>(initialUrl: string, initialData: T, postData?: any) {
     const [data, setData] = useState(initialData);
     const [url, setUrl] = useState(initialUrl);
@@ -157,6 +158,7 @@
   - 将牌的大小数据以及两牌之间的距离记录到一个数组中，以方便修改以及调用
 
     ```js
+    // src/data/card.ts
     const cardsSize = convertPxToVw([
       {
         width: 282,
@@ -230,6 +232,29 @@
 - 组件间传递信息
 
   因为比较简单没有引入 redux 直接使用原生的自定义事件，并将数据存储在 localstorage 中
+  
+- 成功页面的彩带飞落
+
+  参考 https://github.com/cahilfoley/react-snowfall 做了些修改
+
+
+  - 使用 http://demo.qunee.com/svg2canvas/ (canvg.js) 将 svg 转换成 bezier Curve 
+
+    ```js
+    // src/snowfall/hooks.ts
+       	ctx.moveTo(-0.012, 15.45);
+        ctx.bezierCurveTo(-0.012, 15.45, -0.196, 25.764, 7.897, 24.97);
+        ctx.bezierCurveTo(7.3, 25.054, 13.975, 9.882, 25.979, 3.028);
+        ctx.bezierCurveTo(24.911, 2.685, 20.704, 5.048, 20.859, 0.802);
+        ctx.bezierCurveTo(21.013, -3.443, 4.371, 9.818, -0.012, 15.45);
+        ctx.closePath();
+    ```
+
+  - 然后使用 drawImage 将生成的 canvas 放到主要的 canvas 里
+
+    ```js
+    ctx.drawImage(this.image, this.params.x, this.params.y);
+    ```
 
 
   ## 更新日志
@@ -249,3 +274,5 @@
 ![1569659525060](./README.assets/1569659525060.png)
 
 ![1569659533629](./README.assets/1569659533629.png)
+
+![1570190594142](./README.assets/1570190594142.png)
